@@ -1,12 +1,12 @@
 import { nanoid } from "@reduxjs/toolkit";
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addTodo } from "../../redux/slices/todoSlice";
 const AddToDo = () => {
   const dispatch = useDispatch();
-  const {entities} = useSelector((state) => state.todos);
+  
   const [text, setText] = useState("");
-  console.log(entities);
+  const items = text.split(',')
   const submit = () => {
     dispatch(
       addTodo({

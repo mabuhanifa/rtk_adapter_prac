@@ -1,14 +1,13 @@
-import { createSlice } from "@reduxjs/toolkit";
-
+import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
+export const todoAdapter = createEntityAdapter();
+export const todoSelectors = todoAdapter.getSelectors((state) => state.todos);
 const todoSlice = createSlice({
   name: "counter",
-  initialState: {
-    todo: 0,
-  },
+  initialState: todoAdapter.getInitialState(),
   reducers: {
-
+    addTodo: todoAdapter.addOne,
   },
 });
 
-export const {  } = todoSlice.actions;
+export const {addTodo} = todoSlice.actions;
 export default todoSlice.reducer;

@@ -17,7 +17,7 @@ const AddToDo = () => {
     );
   };
   return (
-    <div style={{ margin: "50px" }}>
+    <div className='add-todo'>
       <input type="text" onChange={(e) => setText(e.target.value)} />
       <button onClick={submit}>Add</button>
     </div>
